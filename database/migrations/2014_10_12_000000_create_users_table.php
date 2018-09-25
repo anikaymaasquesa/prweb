@@ -14,12 +14,15 @@ class CreateUsersTable extends Migration
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->rememberToken();
+            $table->increments('idUser');
+            $table->integer("idSocialNetwork")->comment('hace referencia a la tabla de SocialNetwork en la llave primaria');
+            $table->integer("idTypeUser")->comment('hace referencia a la tabla de TypeUser en la llave primaria');
+            $table->integer("idAccountAccess")->comment('Hace referencia a la tabla AccountAccess en la llave primaria');
+            $table->string('nameUser');
+            $table->string('lastNameUsuario');
+            $table->string('emailUser')->unique();
+            $table->string('ageUser');
+            $table->string('dateOfBirthUser');            
             $table->timestamps();
         });
     }
