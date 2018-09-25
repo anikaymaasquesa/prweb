@@ -20,6 +20,7 @@ class CreateContractTable extends Migration
             $table->integer("idPaymentMethod")->comment("hace referebcia a la tabla PaymentMethod en la llave primaria");
             $table->string("dateInitContract");
             $table->string("dateFinishContract");
+            $table->integer("statusContract")->comment("1 Activado, 2 Desactivado, 3 Gratuito, 4 Pendiente");
             $table->timestamps();
         });
     }
