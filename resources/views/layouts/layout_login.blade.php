@@ -51,7 +51,7 @@ License: You must have a valid license purchased only from themeforest(the above
 
     <body class=" login">
         
-    @yield('contenido')
+    @yield('container')
     @yield('footer')
         <!--[if lt IE 9]>
 <script src="../assets/global/plugins/respond.min.js"></script>

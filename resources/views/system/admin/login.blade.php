@@ -1,3 +1,6 @@
+@extends("layouts/layout_login")
+
+@section("container")
 <!-- BEGIN LOGO -->
         <div class="logo">
             <a href="index.html">
@@ -384,3 +387,4 @@
             <!-- END REGISTRATION FORM -->
         </div>
         <!-- END LOGIN -->
+        @stop
