@@ -17,15 +17,6 @@ var Login = function () {
 	                }
 	            },
 
-	            messages: {
-	                username: {
-	                    required: "Username is required."
-	                },
-	                password: {
-	                    required: "Password is required."
-	                }
-	            },
-
 	            invalidHandler: function (event, validator) { //display error alert on form submit   
 	                $('.alert-danger', $('.login-form')).show();
 	            },
@@ -69,12 +60,6 @@ var Login = function () {
 	                email: {
 	                    required: true,
 	                    email: true
-	                }
-	            },
-
-	            messages: {
-	                email: {
-	                    required: "Email is required."
 	                }
 	            },
 
@@ -135,7 +120,7 @@ var Login = function () {
 
         if (jQuery().select2 && $('#country_list').size() > 0) {
             $("#country_list").select2({
-	            placeholder: '<i class="fa fa-map-marker"></i>&nbsp;Select a Country',
+	            placeholder: '<i class="fa fa-map-marker"></i>&nbsp;'+label_arr.PLACEHOLDER_CONTRY,
 	            templateResult: format,
                 templateSelection: format,
                 width: 'auto', 
@@ -158,8 +143,15 @@ var Login = function () {
 	            ignore: "",
 	            rules: {
 	                
-	                fullname: {
+	                name: {
 	                    required: true
+	                },
+	                 lastname: {
+	                    required: true
+	                },
+	                dateOfBirth: {
+	                    required: true,
+	                    date: true
 	                },
 	                email: {
 	                    required: true,
@@ -192,7 +184,7 @@ var Login = function () {
 
 	            messages: { // custom messages for radio buttons and checkboxes
 	                tnc: {
-	                    required: "Please accept TNC first."
+	                    required: label_arr.LABEL_ACCEPT_TNC
 	                }
 	            },
 
@@ -243,6 +235,28 @@ var Login = function () {
 	            jQuery('.login-form').show();
 	            jQuery('.register-form').hide();
 	        });
+	        
+	        jQuery("#dateOfBirth").datepicker({
+	        	rtl: App.isRTL(),
+	        	orientation: "left",
+                autoclose: true
+	        });
+	        $('.register-form #dateOfBirth').datepicker('place');
+	}
+	var initial= function(){
+		jQuery("#country_list").change(function(){
+			jQuery.ajax({
+				  url: "script.php",
+  				  method: "POST",
+  				  data: { id : menuId },
+                  dataType: "html",
+                  success: function(){
+
+                  }
+				});
+			
+		});
+			
 	}
     
     return {
@@ -252,7 +266,7 @@ var Login = function () {
             handleLogin();
             handleForgetPassword();
             handleRegister();    
-
+            initial();
             // init background slide images
 		    $.backstretch([
 		        "images/pages/admin/login/bg/1.jpg",

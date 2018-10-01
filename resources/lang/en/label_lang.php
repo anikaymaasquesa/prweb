@@ -15,5 +15,6 @@ return [
 	'LABEL_CONTRY'=>'Select a Country',
 	'LABEL_CITY'=>'City/Town',
 	'LABEL_RE_PASSWORD'=>'Re-type Your Password',
+	'LABEL_ACCEPT_TNC'=>'Please accept Terms & Conditions first.',
 ];
 ?>

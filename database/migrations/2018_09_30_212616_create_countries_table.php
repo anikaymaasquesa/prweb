@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCountryTable extends Migration
+class CreateCountriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,11 @@ class CreateCountryTable extends Migration
      */
     public function up()
     {
-        Schema::create('country', function (Blueprint $table) {
-            $table->increments('id');
+        Schema::create('countries', function (Blueprint $table) {
+            $table->increments('idCountry');
+            $table->string("nameCountry");
+            $table->string("acronymCountry");
+            $table->integer("statusCountry")->comment("1 Activado, 0 Desactivado");
             $table->timestamps();
         });
     }
@@ -26,6 +29,6 @@ class CreateCountryTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('country');
+        Schema::dropIfExists('countries');
     }
 }

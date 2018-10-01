@@ -32,6 +32,7 @@ License: You must have a valid license purchased only from themeforest(the above
         <link href="css/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
         <link href="css/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
         <link href="css/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css" />
+        <link href="css/plugins/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet" type="text/css" />
         <!-- END GLOBAL MANDATORY STYLES -->
         <!-- BEGIN PAGE LEVEL PLUGINS -->
         <link href="css/plugins/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
@@ -65,9 +66,12 @@ License: You must have a valid license purchased only from themeforest(the above
         <script src="js/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
         <script src="js/jquery.blockui.min.js" type="text/javascript"></script>
         <script src="js/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
+        <script src="js/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js" type="text/javascript"></script>
+        <script src="js/plugins/bootstrap-datepicker/locales/bootstrap-datepicker.es.min.js" type="text/javascript"></script>
         <!-- END CORE PLUGINS -->
         <!-- BEGIN PAGE LEVEL PLUGINS -->
         <script src="js/plugins/jquery-validation/js/jquery.validate.min.js" type="text/javascript"></script>
+        <script src="js/plugins/jquery-validation/js/localization/messages_es.js" type="text/javascript"></script>
         <script src="js/plugins/jquery-validation/js/additional-methods.min.js" type="text/javascript"></script>
         <script src="js/plugins/select2/js/select2.full.min.js" type="text/javascript"></script>
         <script src="js/plugins/backstretch/jquery.backstretch.min.js" type="text/javascript"></script>

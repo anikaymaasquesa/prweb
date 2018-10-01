@@ -16,7 +16,7 @@ return [
 	'LABEL_CONTRY'=>'País',
 	'LABEL_CITY'=>'Ciudad',
 	'LABEL_RE_PASSWORD'=>'Repetir contraseña',
+	'LABEL_ACCEPT_TNC'=>'Primero acepta los terminos y condiciones',
 
-
-];
+	];
 ?>

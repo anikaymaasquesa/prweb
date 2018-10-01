@@ -18,6 +18,8 @@ class CreateUsersTable extends Migration
             $table->integer("idSocialNetwork")->comment('hace referencia a la tabla de SocialNetwork en la llave primaria');
             $table->integer("idTypeUser")->comment('hace referencia a la tabla de TypeUser en la llave primaria');
             $table->integer("idAccountAccess")->comment('Hace referencia a la tabla AccountAccess en la llave primaria');
+            $table->integer("idCountry")->comment('Hace referencia a la tabla Country en la llave primaria');
+            $table->integer("idState")->comment('Hace referencia a la tabla State en la llave primaria');
             $table->string('nameUser');
             $table->string('lastNameUsuario');
             $table->string('emailUser')->unique();

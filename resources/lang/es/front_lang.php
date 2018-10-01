@@ -28,6 +28,8 @@ return [
 	'SIGN_UP_TEXT'=>'Estoy de acuerdo con los',
 	'SIGN_UP_TERMS'=>'Terminos del servicio',
 	'SIGN_UP_POLICY'=>'Politicas de Privacidad',
+	//mensajes de error y elemnts vacios
+	'EMPTY_VALUE'=>'No se encontraron resultados.',
 
 
 ];

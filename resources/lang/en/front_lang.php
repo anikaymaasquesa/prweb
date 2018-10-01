@@ -28,6 +28,7 @@ return [
 	'SIGN_UP_TEXT'=>'I agree to the',
 	'SIGN_UP_TERMS'=>'Terms of Service',
 	'SIGN_UP_POLICY'=>'Privacy PolicyPrivacy Policy',
-
+	//mensajes de error y elemnts vacios
+	'EMPTY_VALUE'=>'Results not found.',
 
 ];

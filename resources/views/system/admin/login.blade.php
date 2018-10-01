@@ -12,6 +12,7 @@
         <div class="content">
             <!-- BEGIN LOGIN FORM -->
             <form class="login-form" action="index.html" method="post">
+                 {!!csrf_field()!!}
                 <h3 class="form-title">{{trans("front_lang.LOGIN_TO_YOUR_ACCOUNT")}}</h3>
                 <div class="alert alert-danger display-hide">
                     <button class="close" data-close="alert"></button>
@@ -56,7 +57,7 @@
                     </ul>
                 </div>
                 <div class="forget-password">
-                    <h4>{{trans("front_lang.LOGIN_WITH")}}</h4>
+                    <h4>{{trans("front_lang.FORGOT_PASSWORD")}}</h4>
                     <p>{{trans("front_lang.FORGOT_PASSWORD_TEXT1")}}
                         <a href="javascript:;" id="forget-password"> {{trans("front_lang.FORGOT_PASSWORD_HERE")}} </a> {{trans("front_lang.FORGOT_PASSWORD_TEXT2")}} </p>
                 </div>
@@ -74,5 +75,13 @@
             @include('system.admin.registerUser')
             <!-- END REGISTRATION FORM -->
         </div>
+        <script>
+            var label_arr=[]; var el_module_settings=[];
+
+            label_arr.LABEL_ACCEPT_TNC='{{trans("label_lang.LABEL_ACCEPT_TNC")}}';
+            label_arr.PLACEHOLDER_CONTRY='{{trans("placeholder_lang.PLACEHOLDER_CONTRY")}}';
+
+
+        </script>
         <!-- END LOGIN -->
         @stop
