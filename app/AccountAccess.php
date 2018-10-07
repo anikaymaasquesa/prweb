@@ -8,5 +8,5 @@ class AccountAccess extends Model
 {
    protected $table="accountaccess";
 
-   protected $filable=["userAccountAccess", "passwordAccountAccess", "statusAccountAccess"];
+   protected $fillable=["userAccountAccess", "passwordAccountAccess", "statusAccountAccess"];
 }

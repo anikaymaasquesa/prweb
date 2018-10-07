@@ -31,6 +31,9 @@ return [
 	//mensajes de error y elemnts vacios
 	'EMPTY_VALUE'=>'No se encontraron resultados.',
 	'NOT_EMPTY_VALUE'=>'Valor no vacio',
+	//alertas para los procesos
+	'MESSAGE_TO_REGISTRATE_ACCOUNT'=>'Para activar su cuenta recibirá un correo en la cuenta registrada previamente',
+	'MESSAGE_TO_ERROR_CREATE_ACCOUNT'=>'El correo ya fue registrado, si a olviado su contraseña favor de restablecerlo',
 
 
 ];

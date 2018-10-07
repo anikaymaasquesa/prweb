@@ -54,39 +54,49 @@ class LoginController extends Controller
    public function store(Request $request){
    	$data=$request->all();   
    		$countries=Countries::where("acronymCountry","=",$data['country'])->first();
+         $countriesAll=Countries::all();
    		if(isset($countries->idCountry)){   			
    			$userExist=Users::where("emailUser","=",$data['email'])->get();
    			$accountExist=AccountAccess::where("userAccountAccess","=",$data['email'])->get();
-   			if($userExist->isEmpty() && $accountExist->isEmpty()){
-   				$account= new AccountAccess;
-   				$account->userAccountAccess=$data['email']; 
-   				$account->passwordAccountAccess=bcrypt($data['password']); 
-   				$account->statusAccountAccess=0;
-   				$account->save();
-   				dd($userExist->isEmpty());
-   				$user= new Users;
-   				$user->idSocialNetwork=5; 
-   				$user->idTypeUser=2; 
-   				$user->idAccountAccess=0; 
-   				$user->idCountry=$countries->idCountry; 
-   				$user->idState=$data['city']; 
-   				$user->nameUser=$data['name']; 
-   				$user->lastNameUsuario=$data['lastname']; 
-   				$user->emailUser=$data['email']; 
-   				$user->ageUser=''; 
-   				$date=explode("/", $data['dateOfBirth']);
-   				$user->dateOfBirthUser=$date[2]."-".$date[1]."-".$date[0];
-   				$user->save();
-
+   			if($userExist->isEmpty() && $accountExist->isEmpty()){               
+   				AccountAccess::create([
+                  "userAccountAccess"=>$data['email'], 
+                  "passwordAccountAccess"=>bcrypt($data['password']), 
+                  "statusAccountAccess"=>0,
+               ]);
+               $account=AccountAccess::all();
+               $lastAccess=$account->last();
+               $date=explode("/", $data['dateOfBirth']);
+   				Users::create([
+                  "idSocialNetwork"=>5,
+                  "idTypeUser"=>2,
+                  "idAccountAccess"=>$lastAccess->idAccountAccess,
+                  "idCountry"=>$countries->idCountry,
+                  "idState"=>$data['city'],
+                  "nameUser"=>$data['name'],
+                  "lastNameUsuario"=>$data['lastname'],
+                  "emailUser"=>$data['email'],
+                  "ageUser"=>'',
+                  "dateOfBirthUser"=>$date[2]."-".$date[1]."-".$date[0],
+               ]);
+               $response["error"]="no";
+               $response["message"]=trans("front_lang.MESSAGE_TO_REGISTRATE_ACCOUNT");
+               $response["status"]="alert-success";
+               $response['contentMessage']="Correcto!";
+               $response['content']=$countriesAll;               
    			}else{
    				$response['error']="yes";
-   				$response["message"]=trans("front_lang.EMPTY_VALUE");
-   				$response['content']=array();
+   				$response["message"]=trans("front_lang.MESSAGE_TO_ERROR_CREATE_ACCOUNT");
+   				$response['contentMessage']="Error!";
+               $response["status"]="alert-danger";
+               $response['content']=$countriesAll;
    			}
    		}else{
    			$response['error']="yes";
    			$response["message"]=trans("front_lang.EMPTY_VALUE");
    			$response['content']=array();
-   		}  		
-   }
+            $response["status"]="alert-danger"; 
+   		}
+         return view("system.admin.login",compact("response"));
+      }
 }

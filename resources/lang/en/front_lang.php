@@ -31,5 +31,7 @@ return [
 	//mensajes de error y elemnts vacios
 	'EMPTY_VALUE'=>'Results not found.',
 	'NOT_EMPTY_VALUE'=>"Non empty value",
-
+	//alertas para los procesos
+	'MESSAGE_TO_REGISTRATE_ACCOUNT'=>'To activate your account you will receive an email in the previously registered account',
+	'MESSAGE_TO_ERROR_CREATE_ACCOUNT'=>'The email was already registered, if you forgot your password please reset it',
 ];

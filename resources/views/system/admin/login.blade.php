@@ -10,6 +10,12 @@
         <!-- END LOGO -->
         <!-- BEGIN LOGIN -->
         <div class="content">
+            @if(isset($response["status"]))
+            <div class="alert alert-block {{$response["status"]}} fade in ">
+                <button type="button" class="close" data-dismiss="alert"></button>
+                <strong>{{$response["contentMessage"]}}</strong> {{$response["message"]}} 
+            </div>
+            @endif
             <!-- BEGIN LOGIN FORM -->
             <form class="login-form" action="index.html" method="post">
                  {!!csrf_field()!!}
