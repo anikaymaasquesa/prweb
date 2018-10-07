@@ -134,7 +134,13 @@ var Login = function () {
 	            $('.register-form').validate().element($(this)); //revalidate the chosen dropdown value and show error or success message for the input
 	        });
     	}
-
+    	 $("#city_list").select2({
+	            			placeholder: '<i class="fa fa-map-marker"></i>&nbsp;'+label_arr.PLACEHOLDER_CITY,
+                			width: 'auto', 
+	            			escapeMarkup: function(m) {
+	                			return m;
+	            			}
+	        		});
 
          $('.register-form').validate({
 	            errorElement: 'span', //default input error message container
@@ -244,16 +250,32 @@ var Login = function () {
 	        $('.register-form #dateOfBirth').datepicker('place');
 	}
 	var initial= function(){
+		$.ajaxSetup({
+    		headers: {
+        		'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    		}
+		});
 		jQuery("#country_list").change(function(){
+       var option='';
 			jQuery.ajax({
-				  url: "script.php",
+				  url: el_module_settings.asyncUrl,
   				  method: "POST",
-  				  data: { id : menuId },
-                  dataType: "html",
-                  success: function(){
-
-                  }
-				});
+  				  data: {id : jQuery(this).val() },
+                  dataType: "json",
+                  success: function(result){                   
+                  	if(result.error=="no"){
+                  		console.log(result.content[0].idState);
+                  		for(a=0;a<result.content.length;a++){
+                  			option+='<option value="'+result.content[a].idState+'">'+result.content[a].nameState+'</option>'+String.fromCharCode(13);
+                  		}
+                  	}                 
+                  jQuery("#city_list").append(option);
+                  	jQuery('#city_list').change(function() {
+	            		jQuery('.register-form').validate().element($(this)); //revalidate the chosen dropdown value and show error or success message for the input
+	        		});
+	    		  
+                }
+			});
 			
 		});
 			

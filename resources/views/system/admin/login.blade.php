@@ -80,8 +80,9 @@
 
             label_arr.LABEL_ACCEPT_TNC='{{trans("label_lang.LABEL_ACCEPT_TNC")}}';
             label_arr.PLACEHOLDER_CONTRY='{{trans("placeholder_lang.PLACEHOLDER_CONTRY")}}';
+            label_arr.PLACEHOLDER_CITY='{{trans("placeholder_lang.PLACEHOLDER_CITY")}}';
 
-
+            el_module_settings.asyncUrl='{{route("login.listingCity")}}';
         </script>
         <!-- END LOGIN -->
         @stop

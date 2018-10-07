@@ -14,4 +14,7 @@
 /*Route::get('/', function () {
     return view('welcome');
 });*/
+//Rutas para el login
 Route::get("login.html",["as"=>"login.index","uses"=>"LoginController@index"]);
+Route::post("listingCity.html",["as"=>"login.listingCity","uses"=>"LoginController@listingCity"]);
+Route::post("registre.htm",["as"=>"login.registerUser","uses"=>"LoginController@store"]);

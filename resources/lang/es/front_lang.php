@@ -30,6 +30,7 @@ return [
 	'SIGN_UP_POLICY'=>'Politicas de Privacidad',
 	//mensajes de error y elemnts vacios
 	'EMPTY_VALUE'=>'No se encontraron resultados.',
+	'NOT_EMPTY_VALUE'=>'Valor no vacio',
 
 
 ];

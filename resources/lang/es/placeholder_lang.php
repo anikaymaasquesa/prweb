@@ -14,6 +14,6 @@ return [
 	'PLACEHOLDER_DATE_BIRTH'=>'Fecha de nacimiento',
 	'PLACEHOLDER_EMAIL'=>'Correo electrónico',
 	'PLACEHOLDER_CONTRY'=>'Selecciona un País',
-	'PLACEHOLDER_CITY'=>'Ciudad',
+	'PLACEHOLDER_CITY'=>'Selecciona una Ciudad',
 	'PLACEHOLDER_RE_PASSWORD'=>'Repetir contraseña',
 ];

@@ -14,6 +14,6 @@ return [
 	'PLACEHOLDER_DATE_BIRTH'=>'Date of Birth',
 	'PLACEHOLDER_EMAIL'=>'Email',
 	'PLACEHOLDER_CONTRY'=>'Select a Country',
-	'PLACEHOLDER_CITY'=>'City/Town',
+	'PLACEHOLDER_CITY'=>'Select City/Town',
 	'PLACEHOLDER_RE_PASSWORD'=>'Re-type Your Password',
 ];

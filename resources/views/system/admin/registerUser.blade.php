@@ -1,4 +1,4 @@
-            <form class="register-form" action="index.html" method="post">
+            <form class="register-form" action="{{route("login.registerUser")}}" method="post">
                    {!!csrf_field()!!}
                 <h3>{{trans("front_lang.TITLE_SIGN_UP")}}</h3>
                 <p> {{trans("front_lang.ENTER_DETIAL_INFORMATION")}} </p>
@@ -31,8 +31,8 @@
                     <label class="control-label visible-ie8 visible-ie9">{{trans("label_lang.LABEL_CONTRY")}}</label>
                     <select name="country" id="country_list" class="select2 form-control">
                        <option value=""></option>
-                       @if(!empty($countries))
-                        @foreach($countries as $country)
+                       @if($response['error']=="no")
+                        @foreach($response['content'] as $country)
                               <option value="{{$country->acronymCountry}}" acr="{{$country->idCountry}}">
                                     {{$country->nameCountry}}
                               </option>
@@ -46,7 +46,10 @@
                     <label class="control-label visible-ie8 visible-ie9">{{trans("label_lang.LABEL_CITY")}}</label>
                     <div class="input-icon">
                         <i class="fa fa-location-arrow"></i>
-                        <input class="form-control placeholder-no-fix" type="text" placeholder="{{trans("placeholder_lang.PLACEHOLDER_CITY")}}" name="city" /> </div>
+                         <select name="city" id="city_list" class="select2 form-control">
+                       <option value=""></option>
+                       
+                    </select>
                 </div>
                 <p> {{trans("front_lang.ENTER_DETAIL_ACCOUNT")}} </p>
                 <div class="form-group">
