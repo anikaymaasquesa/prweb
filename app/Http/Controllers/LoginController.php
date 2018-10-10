@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use DB;
+use Mail;
 use App\Countries;
 use App\States;
 use App\Users;
@@ -24,6 +25,7 @@ class LoginController extends Controller
    		$response["message"]=trans("front_lang.EMPTY_VALUE");
    		$response['content']=array();
    	}
+      //Mail::to("manudrohdz3@gmail.com")->send(new EmergencyCallReceived());
    	return view("system.admin.login",compact("response"));
    }
 
@@ -98,5 +100,9 @@ class LoginController extends Controller
             $response["status"]="alert-danger"; 
    		}
          return view("system.admin.login",compact("response"));
+      }
+
+      public function activateAccount(Request $request){
+
       }
 }

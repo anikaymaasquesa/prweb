@@ -34,6 +34,6 @@ return [
 	//alertas para los procesos
 	'MESSAGE_TO_REGISTRATE_ACCOUNT'=>'Para activar su cuenta recibirá un correo en la cuenta registrada previamente',
 	'MESSAGE_TO_ERROR_CREATE_ACCOUNT'=>'El correo ya fue registrado, si a olviado su contraseña favor de restablecerlo',
-
-
+	//mensajes para los envios de correos
+	'TITLE_ACTIVATE_ACCOUNT'=>'Activar cuenta de usuario',
 ];

@@ -34,4 +34,6 @@ return [
 	//alertas para los procesos
 	'MESSAGE_TO_REGISTRATE_ACCOUNT'=>'To activate your account you will receive an email in the previously registered account',
 	'MESSAGE_TO_ERROR_CREATE_ACCOUNT'=>'The email was already registered, if you forgot your password please reset it',
+	//mensajes para los envios de correos
+	'TITLE_ACTIVATE_ACCOUNT'=>'Activate user account',
 ];
