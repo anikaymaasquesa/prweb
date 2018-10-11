@@ -6,19 +6,12 @@
     <title>{{trans("front_lang.TITLE_ACTIVATE_ACCOUNT")}}</title>
 </head>
 <body>
-    <p>Hola! Se ha reportado un nuevo caso de emergencia a las {{ $distressCall->created_at }}.</p>
-    <p>Estos son los datos del usuario que ha realizado la denuncia:</p>
+    <p>{{trans("front_lang.BODY_TO_ACTIVATE_ACCOUNT_1")}}</p>
+    <p>{{trans("front_lang.BODY_TO_ACTIVATE_ACCOUNT_2")}}</p>    
+    <p>{{trans("front_lang.BODY_TO_ACTIVATE_ACCOUNT_3")}}</p>
     <ul>
-        <li>Nombre: {{ $distressCall->user->name }}</li>
-        <li>Teléfono: {{ $distressCall->user->phone }}</li>
-        <li>DNI: {{ $distressCall->user->dni }}</li>
+        <li>Link:</li>
+        <li><a href="{{route("login.activateAccount")}}">{{route("login.activateAccount")}}<a></li>
     </ul>
-    <p>Y esta es la posición reportada:</p>
-    <ul>
-        <li>Latitud: {{ $distressCall->lat }}</li>
-        <li>Longitud: {{ $distressCall->lng }}</li>
-        <li>
-            <a href="https://www.google.com/maps/dir/{{ $distressCall->lat }},{{ $distressCall->lng }}">
-                Ver en Google Maps
-            </a>
-        </li>
+</body>
+</html>

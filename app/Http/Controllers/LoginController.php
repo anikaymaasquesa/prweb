@@ -7,6 +7,7 @@ use App\Countries;
 use App\States;
 use App\Users;
 use App\AccountAccess;
+use App\Mail\ResponseAccountEmail;
 use Illuminate\Http\Request;
 
 class LoginController extends Controller
@@ -25,7 +26,7 @@ class LoginController extends Controller
    		$response["message"]=trans("front_lang.EMPTY_VALUE");
    		$response['content']=array();
    	}
-      //Mail::to("manudrohdz3@gmail.com")->send(new EmergencyCallReceived());
+      
    	return view("system.admin.login",compact("response"));
    }
 
@@ -85,7 +86,12 @@ class LoginController extends Controller
                $response["message"]=trans("front_lang.MESSAGE_TO_REGISTRATE_ACCOUNT");
                $response["status"]="alert-success";
                $response['contentMessage']="Correcto!";
-               $response['content']=$countriesAll;               
+               $response['content']=$countriesAll; 
+               $mailResponse=[
+                  'name'=>$data['name'].' '.$data['lastname'],
+                  'mail'=>$data['email'],
+               ]; 
+               Mail::to($data['email'])->send(new  ResponseAccountEmail($mailResponse));             
    			}else{
    				$response['error']="yes";
    				$response["message"]=trans("front_lang.MESSAGE_TO_ERROR_CREATE_ACCOUNT");
@@ -99,7 +105,8 @@ class LoginController extends Controller
    			$response['content']=array();
             $response["status"]="alert-danger"; 
    		}
-         return view("system.admin.login",compact("response"));
+         
+         return back()->with('response',$response);
       }
 
       public function activateAccount(Request $request){

@@ -11,14 +11,16 @@ class ResponseAccountEmail extends Mailable
 {
     use Queueable, SerializesModels;
 
+
+public $sendInfo;
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($sendInfo)
     {
-        //
+        $this->sendInfo=$sendInfo;
     }
 
     /**
@@ -28,6 +30,6 @@ class ResponseAccountEmail extends Mailable
      */
     public function build()
     {
-        return $this->view('view.name');
+        return $this->view('system.messages.activateAccount')->subject("Activar cuenta");
     }
 }

@@ -10,10 +10,11 @@
         <!-- END LOGO -->
         <!-- BEGIN LOGIN -->
         <div class="content">
-            @if(isset($response["status"]))
-            <div class="alert alert-block {{$response["status"]}} fade in ">
+            @if(session()->has("response"))
+            
+            <div class="alert alert-block {{session("response.status")}} fade in ">
                 <button type="button" class="close" data-dismiss="alert"></button>
-                <strong>{{$response["contentMessage"]}}</strong> {{$response["message"]}} 
+                <strong>{{session("response.contentMessage")}}</strong> {{session("response.message")}} 
             </div>
             @endif
             <!-- BEGIN LOGIN FORM -->

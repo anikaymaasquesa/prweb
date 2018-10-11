@@ -36,4 +36,7 @@ return [
 	'MESSAGE_TO_ERROR_CREATE_ACCOUNT'=>'El correo ya fue registrado, si a olviado su contraseña favor de restablecerlo',
 	//mensajes para los envios de correos
 	'TITLE_ACTIVATE_ACCOUNT'=>'Activar cuenta de usuario',
+	'BODY_TO_ACTIVATE_ACCOUNT_1'=>'Gracias por registrarte {{$sendInfo["name"]}}. Este correo es para activar tu cuenta con el usuario  {{$sendInfo["email"]}}.',
+	'BODY_TO_ACTIVATE_ACCOUNT_2'=>'Porfavor si tu no hicste un resgitro en mastics.com.mx favor de hacer caso omiso a este correo',
+	'BODY_TO_ACTIVATE_ACCOUNT_3'=>'En caso contrario porfavor da click en el siguiente link.',								
 ];
