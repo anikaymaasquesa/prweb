@@ -120,21 +120,21 @@ class LoginController extends Controller
                          ->where("idAccountAccess",$userInfo->idAccountAccess)
                          ->update(["statusAccountAccess"=>1,"updated_at"=>Carbon::now()]);
                   $response["error"]="no";
-                  $response["message"]=>'';
-                  $response["content"]=>array();
-                  $response["status"]=>'';       
+                  $response["message"]='';
+                  $response["content"]=array();
+                  $response["status"]='';       
             }else{
                $response["error"]="yes";
-               $response["message"]=>'';
-               $response["content"]=>array();
-               $response["status"]=>'';
+               $response["message"]='';
+               $response["content"]=array();
+               $response["status"]='';
             }
          }else{
             $response["error"]="no";
-            $response["message"]=>'';
-            $response["content"]=>array();
-            $response["status"]=>'';
+            $response["message"]='';
+            $response["content"]=array();
+            $response["status"]='';
          }
-         return view();
+         //return view();
       }
 }
