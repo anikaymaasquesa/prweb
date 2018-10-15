@@ -7,6 +7,7 @@ use App\Countries;
 use App\States;
 use App\Users;
 use App\AccountAccess;
+use Carbon\Carbon;
 use App\Mail\ResponseAccountEmail;
 use Illuminate\Http\Request;
 
@@ -109,7 +110,31 @@ class LoginController extends Controller
          return back()->with('response',$response);
       }
 
-      public function activateAccount(Request $request){
-
+      public function activateAccount($email){
+         $response=array();
+         if (!empty($email)) {
+            $correo=base64_decode($email);
+            $userInfo=AccountAccess::where("userAccountAccess",$correo)->first();
+            if ($userInfo->statusAccountAccess==0) {
+                  $result=DB::table("accountaccess")
+                         ->where("idAccountAccess",$userInfo->idAccountAccess)
+                         ->update(["statusAccountAccess"=>1,"updated_at"=>Carbon::now()]);
+                  $response["error"]="no";
+                  $response["message"]=>'';
+                  $response["content"]=>array();
+                  $response["status"]=>'';       
+            }else{
+               $response["error"]="yes";
+               $response["message"]=>'';
+               $response["content"]=>array();
+               $response["status"]=>'';
+            }
+         }else{
+            $response["error"]="no";
+            $response["message"]=>'';
+            $response["content"]=>array();
+            $response["status"]=>'';
+         }
+         return view();
       }
 }

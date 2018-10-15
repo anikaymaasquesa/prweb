@@ -6,12 +6,16 @@
     <title>{{trans("front_lang.TITLE_ACTIVATE_ACCOUNT")}}</title>
 </head>
 <body>
-    <p>{{trans("front_lang.BODY_TO_ACTIVATE_ACCOUNT_1")}}</p>
+    <p>{{trans("front_lang.BODY_TO_ACTIVATE_ACCOUNT_1",$sendInfo)}}</p>
     <p>{{trans("front_lang.BODY_TO_ACTIVATE_ACCOUNT_2")}}</p>    
     <p>{{trans("front_lang.BODY_TO_ACTIVATE_ACCOUNT_3")}}</p>
     <ul>
         <li>Link:</li>
-        <li><a href="{{route("login.activateAccount")}}">{{route("login.activateAccount")}}<a></li>
+        <li>
+            <a target="_blank" href="{{route("login.activateAccount",base64_encode($sendInfo['mail']))}}">
+                {{route("login.activateAccount")}}
+            <a>
+        </li>
     </ul>
 </body>
 </html>

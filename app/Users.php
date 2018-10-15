@@ -19,4 +19,7 @@ class Users extends Authenticatable
         "idSocialNetwork", "idTypeUser", "idAccountAccess", "idCountry", "idState", "nameUser", "lastNameUsuario", "emailUser", "ageUser", "dateOfBirthUser"
     ];
 
+	protected $primaryKey ="idUser";
+
+   	
 }
