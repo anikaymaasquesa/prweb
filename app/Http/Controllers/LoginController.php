@@ -119,22 +119,47 @@ class LoginController extends Controller
                   $result=DB::table("accountaccess")
                          ->where("idAccountAccess",$userInfo->idAccountAccess)
                          ->update(["statusAccountAccess"=>1,"updated_at"=>Carbon::now()]);
+                  $response["status"]='success';
                   $response["error"]="no";
-                  $response["message"]='';
-                  $response["content"]=array();
-                  $response["status"]='';       
+                  $response["message"]=trans("front_lang.WORD_ALERT_SUCCESS");
+                  $response["content"]=array(
+                     'message1'=>trans("front_lang.INITIAL_MESSAGE_ACTIVATE_ACCOUNT_SUCCESS",['mail'=>$correo]),
+                     'message2'=>trans("front_lang.SECOND_MESSAGE_ACTIVATE_ACCOUNT_SUCCESS"),
+                     'btnText'=>trans("label_lang.TEXT_BUTTON_ACTIVATE_ACCOUNT"),
+                  );
+                        
             }else{
+               $response["status"]='danger';
                $response["error"]="yes";
-               $response["message"]='';
-               $response["content"]=array();
-               $response["status"]='';
+               $response["message"]=trans("front_lang.WORD_ALERT_DANGER");
+               $response["content"]=array(
+                  'message1'=>trans("front_lang.INITIAL_MESSAGE_ACTIVATE_ACCOUNT_DANGER",['mail'=>$correo]),
+                  'message2'=>trans("front_lang.SECOND_MESSAGE_ACTIVATE_ACCOUNT_DANGER"),
+                  'btnText'=>trans("label_lang.TEXT_BUTTON_ACTIVATE_ACCOUNT"),
+               );               
             }
          }else{
-            $response["error"]="no";
-            $response["message"]='';
-            $response["content"]=array();
-            $response["status"]='';
+            $response["status"]='danger';
+            $response["error"]="yes";
+            $response["message"]=trans("front_lang.WORD_ALERT_DANGER");
+            $response["content"]=array(
+               'message1'=>trans("front_lang.INITIAL_MESSAGE_ACTIVATE_ACCOUNT_DANGER",['mail'=>$correo]),
+               'message2'=>trans("front_lang.SECOND_MESSAGE_ACTIVATE_ACCOUNT_DANGER"),
+               'btnText'=>trans("label_lang.TEXT_BUTTON_ACTIVATE_ACCOUNT"),
+            );
+            
          }
-         //return view();
+         return view("system.messages.messageAccount",compact("response"));
+      }
+
+      public function forgotPassword(Request $request){
+         $data=$request->all();
+         $response=array();
+         if(!empty($data["email"])){
+            $userInfo=AccountAccess::where("userAccountAccess",$data["email"])->first();
+         }else{
+
+         }
+         return back();
       }
 }

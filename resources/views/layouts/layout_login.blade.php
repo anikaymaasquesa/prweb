@@ -12,8 +12,8 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 Renew Support: http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes
 License: You must have a valid license purchased only from themeforest(the above link) in order to legally use the theme for your project.
 -->
-<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
-<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if IE 8]> <html lang="es" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="es" class="ie9 no-js"> <![endif]-->
 <!--[if !IE]><!-->
 <html lang="es">
     <!--<![endif]-->
@@ -56,9 +56,9 @@ License: You must have a valid license purchased only from themeforest(the above
     @yield('container')
     @yield('footer')
         <!--[if lt IE 9]>
-<script src="js/respond.min.js"></script>
-<script src="js/excanvas.min.js"></script> 
-<script src="js/ie8.fix.min.js"></script> 
+<script src="{{asset("js/respond.min.js")}}"></script>
+<script src="{{asset("js/excanvas.min.js")}}"></script> 
+<script src="{{asset("js/ie8.fix.min.js")}}"></script> 
 <![endif]-->
         <!-- BEGIN CORE PLUGINS -->
         <script src="{{asset("js/jquery.min.js")}}" type="text/javascript"></script>

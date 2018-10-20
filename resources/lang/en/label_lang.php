@@ -16,5 +16,7 @@ return [
 	'LABEL_CITY'=>'City/Town',
 	'LABEL_RE_PASSWORD'=>'Re-type Your Password',
 	'LABEL_ACCEPT_TNC'=>'Please accept Terms & Conditions first.',
+	//texto para los botones
+	'TEXT_BUTTON_ACTIVATE_ACCOUNT'=>'Start now!',
 ];
 ?>

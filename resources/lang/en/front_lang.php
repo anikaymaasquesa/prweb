@@ -31,6 +31,8 @@ return [
 	//mensajes de error y elemnts vacios
 	'EMPTY_VALUE'=>'Results not found.',
 	'NOT_EMPTY_VALUE'=>"Non empty value",
+	'WORD_ALERT_SUCCESS'=>'Success!',
+	'WORD_ALERT_DANGER'=>'Error!',
 	//alertas para los procesos
 	'MESSAGE_TO_REGISTRATE_ACCOUNT'=>'To activate your account you will receive an email in the previously registered account',
 	'MESSAGE_TO_ERROR_CREATE_ACCOUNT'=>'The email was already registered, if you forgot your password please reset it',
@@ -39,4 +41,9 @@ return [
 	'BODY_TO_ACTIVATE_ACCOUNT_1'=>'Thanks for registering :name. This email is to activate your account with the user  :mail.',
 	'BODY_TO_ACTIVATE_ACCOUNT_2'=>'Please, if you did not sign a resgitro at mastics.com.mx please ignore this email',
 	'BODY_TO_ACTIVATE_ACCOUNT_3'=>'Otherwise, please click on the following link.',	
+	//mensaje para el activar cuenta
+	'INITIAL_MESSAGE_ACTIVATE_ACCOUNT'=>'your account :mail has been activated successfully.',
+	'SECOND_MESSAGE_ACTIVATE_ACCOUNT'=>'The next step is to login and set up your site for it by clicking on the next button.',
+	'INITIAL_MESSAGE_ACTIVATE_ACCOUNT_DANGER'=>'Syour account :mail has already been activated.',
+	'SECOND_MESSAGE_ACTIVATE_ACCOUNT_DANGER'=>'This account has already been activated please login or if you have forgotten your password go to the corresponding section',
 ];

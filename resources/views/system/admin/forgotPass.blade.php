@@ -1,4 +1,4 @@
-            <form class="forget-form" action="index.html" method="post">
+            <form class="forget-form" action="{{route("login.forgotPassword")}}" method="post">
                  {!!csrf_field()!!}
                 <h3>{{trans("front_lang.FORGOT_PASSWORD")}}</h3>
                 <p> {{trans("front_lang.INSTRUCTION_FORGOT_PASSWORD")}} </p>
